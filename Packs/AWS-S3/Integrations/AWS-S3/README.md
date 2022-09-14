@@ -450,3 +450,29 @@ Get AWS S3 Bucket Encryption
 #### Command Example
 
 ``` !aws-s3-put-public-access-block bucket="bucket name" BlockPublicAcls=True IgnorePublicAcls=False BlockPublicPolicy=True RestrictPublicBuckets=True```
+
+
+#### Context Example
+
+```
+{
+    "AWS": {
+        "S3": {
+            "Buckets": [
+                {
+                    "BucketName": "bucket-a",
+                    "ServerSideEncryptionConfiguration": {
+                        "Rules": [
+                            {
+                                "ApplyServerSideEncryptionByDefault": {
+                                    "SSEAlgorithm": "AES256"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}
+```
